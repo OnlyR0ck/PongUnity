@@ -1,0 +1,104 @@
+{
+    "name": "InputManager",
+    "maps": [
+        {
+            "name": "1STPlayer",
+            "id": "0c579883-34c1-4be8-8fed-5db4ea23868a",
+            "actions": [
+                {
+                    "name": "1STMove",
+                    "type": "Value",
+                    "id": "eb21f7cf-5065-4b28-ad38-228260c75946",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "1D Axis",
+                    "id": "f477e343-8d9f-48a2-b1cb-d4bd8423e831",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "1STMove",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "f439051b-c456-4218-9be0-94fe2b2198fd",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "1STMove",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "fc079d97-d1a6-4a4e-9c1c-18826856bc5a",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "1STMove",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        },
+        {
+            "name": "2NDPlayer",
+            "id": "d434091f-b225-434c-a39a-0ab660fc13ee",
+            "actions": [
+                {
+                    "name": "2NDMove",
+                    "type": "Value",
+                    "id": "5fdd0504-1ab0-462f-b802-9af52b279c03",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "1D Axis",
+                    "id": "945833d9-62bb-42cc-abf3-55aef39a7b87",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "2NDMove",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "f010fce7-47c6-471f-a097-aa141867d71e",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "2NDMove",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "c936ee0f-479c-43d6-9a3a-0bfec949b723",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "2NDMove",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
