@@ -327,7 +327,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 206754876}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: acf88aa01617b094cbb6b33b7501b1e7, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -548,7 +548,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 551032248}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 3e8fb4f7bd3037d4cbfd3eb62c1fb9a8, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -786,7 +786,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 911009235}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 3e8fb4f7bd3037d4cbfd3eb62c1fb9a8, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -993,7 +993,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1092810817}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: acf88aa01617b094cbb6b33b7501b1e7, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1074,6 +1074,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90.00001}
+--- !u!1 &1133476725
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1133476726}
+  m_Layer: 0
+  m_Name: SceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1133476726
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1133476725}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1174666485
 GameObject:
   m_ObjectHideFlags: 0
@@ -1341,7 +1371,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06e8abbea763e8549b586f4f69254b6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ballSpeed: 10
+  _ballSpeed: 7
+  _input: {fileID: -944628639613478452, guid: 367a6c5d9051b954a9cdbbff7375610a, type: 3}
 --- !u!1 &1579191675
 GameObject:
   m_ObjectHideFlags: 0

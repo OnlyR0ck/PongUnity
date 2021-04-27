@@ -111,6 +111,33 @@ public class @InputManager : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": true
                 }
             ]
+        },
+        {
+            ""name"": ""Ball"",
+            ""id"": ""5dd13a45-1ab6-4bb9-90ba-2261083a3712"",
+            ""actions"": [
+                {
+                    ""name"": ""Reset"",
+                    ""type"": ""Button"",
+                    ""id"": ""0e76c908-2f2d-4886-93a6-86c01f0816ff"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""2681f81e-e76c-4dde-a90b-c748fad17fbe"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Reset"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -121,6 +148,9 @@ public class @InputManager : IInputActionCollection, IDisposable
         // 2NDPlayer
         m__2NDPlayer = asset.FindActionMap("2NDPlayer", throwIfNotFound: true);
         m__2NDPlayer__2NDMove = m__2NDPlayer.FindAction("2NDMove", throwIfNotFound: true);
+        // Ball
+        m_Ball = asset.FindActionMap("Ball", throwIfNotFound: true);
+        m_Ball_Reset = m_Ball.FindAction("Reset", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -232,6 +262,39 @@ public class @InputManager : IInputActionCollection, IDisposable
         }
     }
     public _2NDPlayerActions @_2NDPlayer => new _2NDPlayerActions(this);
+
+    // Ball
+    private readonly InputActionMap m_Ball;
+    private IBallActions m_BallActionsCallbackInterface;
+    private readonly InputAction m_Ball_Reset;
+    public struct BallActions
+    {
+        private @InputManager m_Wrapper;
+        public BallActions(@InputManager wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Reset => m_Wrapper.m_Ball_Reset;
+        public InputActionMap Get() { return m_Wrapper.m_Ball; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(BallActions set) { return set.Get(); }
+        public void SetCallbacks(IBallActions instance)
+        {
+            if (m_Wrapper.m_BallActionsCallbackInterface != null)
+            {
+                @Reset.started -= m_Wrapper.m_BallActionsCallbackInterface.OnReset;
+                @Reset.performed -= m_Wrapper.m_BallActionsCallbackInterface.OnReset;
+                @Reset.canceled -= m_Wrapper.m_BallActionsCallbackInterface.OnReset;
+            }
+            m_Wrapper.m_BallActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Reset.started += instance.OnReset;
+                @Reset.performed += instance.OnReset;
+                @Reset.canceled += instance.OnReset;
+            }
+        }
+    }
+    public BallActions @Ball => new BallActions(this);
     public interface I_1STPlayerActions
     {
         void On_1STMove(InputAction.CallbackContext context);
@@ -239,5 +302,9 @@ public class @InputManager : IInputActionCollection, IDisposable
     public interface I_2NDPlayerActions
     {
         void On_2NDMove(InputAction.CallbackContext context);
+    }
+    public interface IBallActions
+    {
+        void OnReset(InputAction.CallbackContext context);
     }
 }

@@ -98,6 +98,33 @@
                     "isPartOfComposite": true
                 }
             ]
+        },
+        {
+            "name": "Ball",
+            "id": "5dd13a45-1ab6-4bb9-90ba-2261083a3712",
+            "actions": [
+                {
+                    "name": "Reset",
+                    "type": "Button",
+                    "id": "0e76c908-2f2d-4886-93a6-86c01f0816ff",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "2681f81e-e76c-4dde-a90b-c748fad17fbe",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Reset",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

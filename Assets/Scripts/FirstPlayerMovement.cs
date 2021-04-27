@@ -57,6 +57,7 @@ public class FirstPlayerMovement : MonoBehaviour
 
             transform.position = Vector2.Lerp(_currentPosition, _nextPosition, _blend);
         }
+        //transform.position = Vector3.ClampMagnitude(transform.position, )
         else if (_currentPosition.y > 0) transform.position = new Vector3(transform.position.x, _border);
         else transform.position = new Vector3(transform.position.x, -_border);
     }
